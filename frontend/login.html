@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body class="container">
+  <nav class="navbar navbar-expand-lg navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">User App</a>
+      
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="user.html"><button type="button" class="btn btn-dark">User List</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login.html"><button type="button" class="btn btn-primary">Login</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html"><button type="button" class="btn btn-primary">Signup</button></a>
+          </li>
+          
+          
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      axios.post('http://localhost:3000/users/login', { email, password })
+        .then(function (response) {
+          alert('Login successful');
+          // Redirect to another page or perform any other action
+        })
+        .catch(function (error) {
+          console.log('Login failed');
+          console.error(error);
+        });
+    });
+  </script>
+</body>
+</html>
