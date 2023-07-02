@@ -29,6 +29,7 @@ router.post('/signup', (req, res) => {
   });
 });
 
+
 // Route for user login
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -40,7 +41,7 @@ router.post('/login', (req, res) => {
       return;
     }
     if (results.length === 0) {
-      res.status(401).send('Invalid email or password.');
+      res.status(401).send('Invalid email or password');
       return;
     }
     const user = results[0];
@@ -49,7 +50,16 @@ router.post('/login', (req, res) => {
       res.status(401).send('Invalid email or password');
       return;
     }
-    res.send('User login successful');
+    res.send('User page successful');
+  });
+  // -----------------------------------------------
+
+});
+
+router.get('/list', (req, res) => {
+  // Check if the user exists in the database
+  pool.query('SELECT * FROM users', (err, results) => {
+    res.send(results);
   });
 });
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+  <nav class="navbar navbar-expand-lg navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">User App</a>
+
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="userlist.html"><button type="button"
+                class="btn btn-dark">User List</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login.html"><button type="button"
+                class="btn btn-primary">Login</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="signup.html"><button type="button"
+                class="btn btn-primary">Signup</button></a>
+          </li>
+
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <h3><u>User List</u></h3>
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Subheading</div>
+        Content for list item
+      </div>
+      <span class="badge bg-primary rounded-pill">14</span>
+    </li>
+   
+  </ol>
+  <br>
+  <br>
+
+  <ol id="dynamicList" class="list-group list-group-numbered">
+    <!-- Dynamic list items will be appended here -->
+
+  </ol>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+
+    axios.get('http://localhost:3000/users/list')
+      .then(function (response) {
+        let data = response.data;
+        var dynamicList = $('#dynamicList');
+
+        $.each(data, function (index, item) {
+          // Create list item element
+          var listItem = $('<li>')
+            .addClass('list-group-item d-flex justify-content-between align-items-start');
+
+          // Create content for the list item
+          var listItemContent = $('<div>')
+            .addClass('ms-2 me-auto')
+            .appendTo(listItem);
+
+          // Create subheading element
+          var subheading = $('<div>')
+            .addClass('fw-bold')
+            .text(item.name)
+            .appendTo(listItemContent);
+
+          // Create content for the list item
+          $('<span>')
+            .text(item.email)
+            .appendTo(listItemContent);
+
+          // Create badge element
+          var badge = $('<span>')
+            .addClass('badge bg-primary rounded-pill')
+            .text(index)
+            .appendTo(listItem);
+
+          // Append the list item to the dynamic list
+          dynamicList.append(listItem);
+        });
+
+        // Redirect to another page or perform any other action
+      })
+      .catch(function (error) {
+        console.log('user page failed');
+        console.error(error);
+      });
+
+  </script>
+  
+</body>
+
+</html>
