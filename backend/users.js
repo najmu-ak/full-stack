@@ -13,7 +13,7 @@ router.post('/signup', (req, res) => {
       return;
     }
     if (results.length > 0) {
-      res.status(409).send('User already exists');
+      res.status(409).send('User already exists,try new email');
       return;
     }
     // Insert the new user into the database
