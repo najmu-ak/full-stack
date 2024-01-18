@@ -8,7 +8,7 @@ router.post('/signup', (req, res) => {
   // Check if the user already exists in the database
   pool.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
     if (err) {
-      console.error('Error querying users:', err);
+      console.error  ('Error querying users:', err);
       res.status(500).send('Internal Server Error');
       return;
     }

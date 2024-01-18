@@ -9,13 +9,13 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">User App</a>
       
-      <div>
+      <div>  
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="userlist.html"><button type="button" class="btn btn-dark">User List</button></a>
+            <a class="nav-link active" href="userlist.html"><button type="button" class="btn btn-dark">User List</button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="login.html"><button type="button" class="btn btn-primary">Login</button></a>
+            <a class="nav-link active" href="login.html"><button type="button" class="btn btn-primary">Login</button></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="signup.html"><button type="button" class="btn btn-primary">Signup</button></a>
@@ -53,9 +53,9 @@
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      axios.post('http://localhost:3000/users/login', { email, password })
+      axios.post('http://localhost:3000/users/login', { email, password })// Endpoint or API or services
         .then(function (response) {
-          alert('Login successful.');
+          alert("Login successful.");
           // Redirect to another page or perform any other action
         })
         .catch(function (error) {

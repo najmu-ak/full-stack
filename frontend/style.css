@@ -1,4 +1,4 @@
-.noor{
+/* .noor{
     color: blue;
 }
 .big{
@@ -10,4 +10,74 @@
 
 .default{
     text-align: center;
+}
+
+
+  */
+
+/* 
+.form-group{
+    background-color: aqua;
+    color: rgb(0, 255, 85);
+    text-align: left;
+    padding: 1cm;
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;    
+}
+body{
+    background-color:aliceblue
+}
+nav{
+    background-color: rgb(24, 19, 78);
+    /* font-variant: small-caps; */
+    color: white;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+.search-box{
+    text-align: center; 
+    margin: 50px;
+    padding-left: 0;
+}
+
+input{
+    width: 60%;
+    padding: 10px;
+}
+
+.products{
+    text-align: center;
+}
+
+.box{
+    text-align: center;
+    border-width: 2px;
+    border-color: rgb(219, 219, 219);
+    border-style: solid;
+    display: inline-block;
+    width: 220px;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.font{
+    font-weight: bold;
+}
+
+.add-cart{
+    text-align: right;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
 }

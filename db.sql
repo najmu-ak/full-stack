@@ -1,5 +1,5 @@
--- CREATE DATABASE testdb;
--- USE DATABASE testdb;
+CREATE DATABASE testdb;
+USE DATABASE testdb;
 
 -- CREATE TABLE teacher (
 --   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -33,4 +33,20 @@
 -- SELECT * from user where email = "nor@gmail" and password = "heof"
 
 
-UPDATE `school`.`teacher` SET `phone`='123-456-789' WHERE  `id`=1;
+-- UPDATE `school`.`teacher` SET `phone`='123-456-789' WHERE  `id`=1;
+
+create table person(name VARCHAR(10),skill VARCHAR(10),age INTEGER(2));
+insert into person values('&name','&skill','&age');
+-- ('Najmudeen','Teaching',20),
+-- ('Ajith', 'racer', 49),
+-- ('ali', 'typing', 22),
+-- ('siva', 'writer', 17),
+-- ('vijay', 'acting', 50),
+-- ('john', 'driver', 30),
+-- ('messi', 'football', 36),
+-- ('neymer', 'football', 36);
+-- SELECT * from school.person;
+
+-- INSERT INTO `school`.`person` (`name`, `skill`, `age`) VALUES ('leo', 'movie', 2);
+
+INSERT INTO `school`.`person` (`name`, `skill`, `age`) VALUES ('leo', 'movie', 30);

@@ -3,9 +3,9 @@ const mysql = require('mysql');
 // Create a MySQL connection pool
 const pool = mysql.createPool({
   host: 'localhost',
-  user: 'admin',
+  user: 'root',
   password: 'password',
-  database: 'school'
+  database: 'restaurant'
 });
 
 // Export the pool for reusability

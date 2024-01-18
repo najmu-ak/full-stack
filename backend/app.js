@@ -4,6 +4,7 @@ const app = express();
 
 const usersRouter = require('./users');
 
+const booksRouter = require('./books');
 // Middleware to parse request bodies
 app.use(express.json());
 app.use(cors())
@@ -11,6 +12,7 @@ app.use(cors())
 // Mount the users router
 app.use('/users', usersRouter);
 
+app.use('/books', booksRouter);
 // Start the server
 app.listen(3000, () => {
   console.log('Server started on port 3000');
