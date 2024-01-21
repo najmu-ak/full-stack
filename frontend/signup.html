@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<body class="container">
+<!-- <body class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-expand-md bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">User App</a>
@@ -48,10 +48,66 @@
       </div>
       <button type="submit" class="btn btn-primary">Signup</button>
     </form>
-  </div>
+  </div> -->
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Signup page</title>
+  
+      <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="github.png">
+  </head>
+  
+  <body>
+      <div class="container">
+          <div class="header">
+              <h1>Sign up</h1>
+          </div>
+          <div id="input-box-size">
+          <form action="">
+              <label for="">Name</label>
+              <input type="text" name="" id="">
+              <label for="">Email</label>
+              <input type="text" name="" id="">
+              <label for="">Password</label>
+              <input type="password" value="" id="myInput">
+              <input type="checkbox" onclick="myFunction()">Show Password   
+              <input type="submit" value="signup">
+          </form>
+        </div>
+      </div>
+      <div class="col-4 row-1">
+        <span>
+          Already have an account?
+          <a href="login.html"><span>Log in</span></a>
+          </span>
+    </div>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <!-- password visible script -->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+
+
   <script>
     const signupForm = document.getElementById('signupForm');
 
